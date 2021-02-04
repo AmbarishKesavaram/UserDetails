@@ -1,0 +1,37 @@
+<div class="form-group row">
+
+    <label class="col-sm-2 col-form-label">Country Name</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="userName"
+        placeholder="Enter User Name"/>
+        
+    </div>
+    <label class="col-sm-2 col-form-label">Country Name</label>
+    <div class="col-sm-10">
+        <select class="form-control" [(ngModel)]="countryName">
+            <option>--Select--</option>
+            <option *ngFor = "let cou of CountriesList">
+                {{cou.CountryName}}
+            </option>
+        </select>
+        
+    </div>
+    <label class="col-sm-2 col-form-label">Country Name</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="phoneNumber"
+        placeholder="Enter Phone Number"/>
+        
+    </div>
+</div>
+
+<button (click)="addUser()" *ngIf="user.UserId==0" class="btn btn-primary">
+    Add
+</button>
+
+<button (click)="updateUser()" *ngIf="user.UserId!=0" class="btn btn-primary">
+    Update
+</button>
+
+
+
+       
